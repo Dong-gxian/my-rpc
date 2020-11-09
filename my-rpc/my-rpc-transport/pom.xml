@@ -11,6 +11,17 @@
 
     <artifactId>my-rpc-transport</artifactId>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <commons.version>2.5</commons.version>
+        <jetty.version>9.4.9.v20180320</jetty.version>
+        <fastjson.version>1.2.44</fastjson.version>
+        <lombok.version>1.18.8</lombok.version>
+        <slf4j.version>1.7.26</slf4j.version>
+        <logback.version>1.2.3</logback.version>
+        <junit.version>4.12</junit.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>

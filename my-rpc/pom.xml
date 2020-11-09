@@ -34,7 +34,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>9.4.19.v20190610</version>
+                <version>${commons.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>

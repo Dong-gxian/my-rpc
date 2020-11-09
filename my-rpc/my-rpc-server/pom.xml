@@ -10,6 +10,33 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>my-rpc-server</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.dgx</groupId>
+            <artifactId>my-rpc-proto</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dgx</groupId>
+            <artifactId>my-rpc-transport</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dgx</groupId>
+            <artifactId>my-rpc-codec</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dgx</groupId>
+            <artifactId>my-rpc-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

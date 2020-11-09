@@ -1,5 +1,5 @@
 package com.dgx.myrpc.transport;
-
+//这一部分是javaweb的知识
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -49,7 +49,7 @@ public class HTTPTransportServer implements TransportServer {
 
     }
 
-    //client->request->jetty server->ctx(server handler)->RequestServlet->RequestHandler->HttpServletResponse->client
+    //不对：client->request->jetty server->ctx(server handler)->RequestServlet->RequestHandler->HttpServletResponse->client
     class RequestServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
