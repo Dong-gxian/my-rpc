@@ -14,5 +14,5 @@ import lombok.NoArgsConstructor;
 public class Response {
     private int code = 0;//status code,0 = succeed, other = failed
     private String message = "ok";//reason why failed
-    private Object[] data;//contents returned
+    private Object data;//contents returned
 }

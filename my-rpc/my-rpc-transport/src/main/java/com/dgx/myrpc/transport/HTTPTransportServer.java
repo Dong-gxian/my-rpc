@@ -5,7 +5,6 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,7 +24,7 @@ public class HTTPTransportServer implements TransportServer {
 
     @Override
     public void init(int port, RequestHandler handler) { //need help
-        this.handler = handler;//real handler to handle requests
+        this.handler = handler;//real handler to handle requests ,是在server中自定义的
         this.server = new Server(port);
         //servlet receive request
         ServletContextHandler ctx = new ServletContextHandler();//ctx is the handler of jetty server
@@ -49,7 +48,7 @@ public class HTTPTransportServer implements TransportServer {
 
     }
 
-    //不对：client->request->jetty server->ctx(server handler)->RequestServlet->RequestHandler->HttpServletResponse->client
+    //不对：client->request->jetty server->ctx(httpserver handler)->Servlet->serverletHandler（handler of server's）->HttpServer->client
     class RequestServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
