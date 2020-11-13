@@ -51,6 +51,9 @@ public class HTTPTransportServer implements TransportServer {
     //不对：client->request->jetty server->ctx(httpserver handler)->Servlet->serverletHandler（handler of server's）->HttpServer->client
     class RequestServlet extends HttpServlet {
         @Override
+        /**
+         * 有POST请求到来时做出的反应
+         */
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
             log.info("client connect");
             InputStream in = req.getInputStream();//get the data from client

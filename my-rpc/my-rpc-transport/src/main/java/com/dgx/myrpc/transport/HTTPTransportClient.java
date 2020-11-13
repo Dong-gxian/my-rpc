@@ -29,8 +29,8 @@ public class HTTPTransportClient implements TransportClient {
         httpConn.setUseCaches(false);
         httpConn.setRequestMethod("POST");
 
-        httpConn.connect();
-        //transport
+        httpConn.connect();//发起连接
+        //将data写进httpConn对象的输出流
         IOUtils.copy(data, httpConn.getOutputStream());
 
         int resultCode = httpConn.getResponseCode();

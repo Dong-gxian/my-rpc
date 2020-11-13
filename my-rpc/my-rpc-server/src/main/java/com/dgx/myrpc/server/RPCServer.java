@@ -23,6 +23,10 @@ public class RPCServer {
     private ServiceManager serviceManager;
     private ServiceInvoker serviceInvoker;
 
+    public RPCServer() {
+        this(new RpcServerConfig());
+    }
+
     public RPCServer(RpcServerConfig config) {
         this.config = config;
         //this.net = new HTTPTransportServer();

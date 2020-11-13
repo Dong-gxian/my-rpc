@@ -18,10 +18,14 @@ public class ReflectionUtils {
      * @throws IllegalAccessException
      * @throws InstantiationException
      */
-    public static <T> T newInstance(Class<T> clazz) throws IllegalAccessException, InstantiationException {
+    public static <T> T newInstance(Class<T> clazz) {
         //The <Te the return value T means that the generics of method can be different from it's class's
         //question:how do we know which constructor to be called?
-        return clazz.newInstance();//how to replace this?
+        try {
+            return clazz.newInstance();
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
     }
 
     /**
@@ -32,7 +36,7 @@ public class ReflectionUtils {
      */
     public static <T> Method[] getPublicMethods(Class<T> clazz){
         Method[] declaredMethods = clazz.getDeclaredMethods();
-        ArrayList<Method> methods = new ArrayList<>();
+        ArrayList<Method> methods = new ArrayList<Method>();
         for (Method declaredMethod : declaredMethods) {
             if(Modifier.isPublic(declaredMethod.getModifiers())){
                 methods.add(declaredMethod);
